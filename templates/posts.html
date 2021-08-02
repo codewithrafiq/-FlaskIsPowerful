@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Posts</title>
+{% endblock head %}
+
+
+{% block body %}
+    <h1>All Posts</h1>
+
+    <div class="posts">
+        {% for post in posts %}
+          <div class="single_post">
+              <a href={{url_for('singlePosts',post_id=post.id)}}><h2>{{post.title}}</h2></a>
+              <p>{{post.user}}</p>
+              <h4>{{post.content}}</h4>
+              <br>
+              <br>
+          </div>
+        {% endfor %}
+    </div>
+
+{% endblock body %}
